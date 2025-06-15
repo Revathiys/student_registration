@@ -137,6 +137,8 @@
       <input type="file" id="resume" name="resume">
 
       <button type="submit" class="btn-submit">Register</button>
+      <div id="successMsg" style="color: green; font-weight: bold; margin-top: 15px;"></div>
+
     </form>
     </fieldset>
     <!-- Helpful Links Section -->
@@ -147,5 +149,15 @@
       <a href="tel:+911234567890">📞 Call Us</a>
     </div>
   </div>
+  <script>
+  const form = document.querySelector("form");
+  const successMsg = document.getElementById("successMsg");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    successMsg.textContent = "✅ Registration Successful!";
+    form.reset();
+  });
+</script> 
 </body>
 </html>
