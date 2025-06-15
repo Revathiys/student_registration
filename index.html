@@ -8,20 +8,19 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f1e1ec;
+      margin: 0;
+      padding: 0;
     }
     header {
       background-color: rgb(0, 200, 255);
-      color: white; padding: 5px ;
+      color: white;
+      padding: 5px;
       text-align: center;
     }
-    .small-logo {
-     width: 80px;
+    .logo {
+      width: 80px;
       height: auto;
-     }
-     .logo {
-     width: 80px;
-     height: auto;
-     }
+    }
     nav {
       margin-top: 10px;
     }
@@ -31,38 +30,33 @@
       margin: 0 15px;
       font-weight: bold;
     }
-     .profile-img {
-      display: inline-block;
-      width: 550px;
-      height: 200px;
-      object-fit: none;
-      cursor: pointer;
+    .container {
+      max-width: 100%;
+      padding: 10px;
+      margin: auto;
     }
-
+    img {
+      max-width: 100%;
+      height: auto;
+    }
     form label {
       display: inline-block;
       margin-top: 15px;
       font-weight: bold;
     }
-   .container {
-  max-width: 100%;
-  padding: 10px;
-  margin: auto;
-}
-
-      input, select, textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #e27c7c;
-  border-radius: 10px;
-}
-
-      .gender-options, .skills-options {
+    input, select, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #e27c7c;
+      border-radius: 10px;
+    }
+    .gender-options, .skills-options {
       display: flex;
       gap: 15px;
       margin-top: 5px;
+      flex-wrap: wrap;
     }
     .btn-submit {
       background-color: #0073e6;
@@ -79,25 +73,43 @@
       margin-top: 25px;
     }
     fieldset {
-  border: solid black;
-  width: 100%;
-  max-width: 500px;
-  margin: 20px auto;
-  box-sizing: border-box;
-}
-
-   
+      border: solid black;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto;
+      box-sizing: border-box;
+    }
+    #popup {
+      display: none;
+      text-align: center;
+      background: #d4edda;
+      color: #155724;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px auto;
+      max-width: 500px;
+      font-weight: bold;
+      animation: fadein 0.5s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @media (max-width: 600px) {
       nav a {
         display: block;
         margin: 5px 0;
+      }
+      .gender-options, .skills-options {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-   <img src="logo.jpg" alt="Logo" style="width: 80px; height: auto;" />
+    <img src="logo.jpg" alt="Logo" class="logo" />
     <h1>Student Registration</h1>
     <nav>
       <a href="index.html">Home</a>
@@ -105,81 +117,81 @@
       <a href="contact.html">Contact Us</a>
     </nav>
   </header>
+
+  <!-- ✅ Popup Message -->
+  <div id="popup">✅ Registration submitted successfully!</div>
+
   <div class="container">
-    <div >
-      <img src="logo2.jpg" style="width: 500px; height: auto;" />
+    <div>
+      <img src="logo2.jpg" alt="Banner Image" />
     </div>
     <fieldset>
-      <form >
-      <label for="fullname">Full Name*</label>
-      <input type="text" id="fullname" name="fullname" required>
+      <form>
+        <label for="fullname">Full Name*</label>
+        <input type="text" id="fullname" name="fullname" required>
 
-      <label for="email">Email*</label>
-      <input type="email" id="email" name="email" 
-      required title="Enter a valid email address">
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required title="Enter a valid email address">
 
-      <label for="password">Password*</label>
-      <input type="password" id="password" name="password" required>
+        <label for="password">Password*</label>
+        <input type="password" id="password" name="password" required>
 
-      <label>Gender</label>
-      <div class="gender-options">
-        <label><input  value="Male" type="radio" name="gender"> Male</label>
-        <label><input type="radio" name="gender" value="Female"> Female</label>
-        <label><input type="radio" name="gender" value="Other"> Other</label>
-      </div>
+        <label>Gender</label>
+        <div class="gender-options">
+          <label><input value="Male" type="radio" name="gender"> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
 
-      <label>Skills</label><br>
-      <div class="skills-options">
-        <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
-        <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
-        <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
-      </div>
-      <label for="city">City</label>
-      <select id="city" name="city">
-        <option>Bengaluru</option>
-        <option>Chennai</option>
-        <option>Delhi</option>
-        <option>Mumbai</option>
-      </select>
-      <label for="about">About You</label>
-      <textarea id="about" name="about" rows="4"></textarea>
+        <label>Skills</label>
+        <div class="skills-options">
+          <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+          <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
+          <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+        </div>
 
-      <label for="resume">Upload Resume</label>
-      <input type="file" id="resume" name="resume">
+        <label for="city">City</label>
+        <select id="city" name="city">
+          <option>Bengaluru</option>
+          <option>Chennai</option>
+          <option>Delhi</option>
+          <option>Mumbai</option>
+        </select>
 
-      <button type="submit" class="btn-submit">Register</button>
-    </form>
+        <label for="about">About You</label>
+        <textarea id="about" name="about" rows="4"></textarea>
+
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" name="resume">
+
+        <button type="submit" class="btn-submit">Register</button>
+      </form>
     </fieldset>
+
     <!-- Helpful Links Section -->
     <div class="helpful-links">
-      <a href="terms.html" target="_blank">Terms of Use</a>
-      <a href="brochure.pdf" download>Download Course Brochure</a>
-      <a href="mailto:support@example.com">📧 Email Us</a>
+      <a href="terms.html" target="_blank">Terms of Use</a> |
+      <a href="brochure.pdf" download>Download Course Brochure</a> |
+      <a href="mailto:support@example.com">📧 Email Us</a> |
       <a href="tel:+911234567890">📞 Call Us</a>
     </div>
   </div>
 
   <script>
-  const form = document.querySelector("form");
-  const popup = document.getElementById("popup");
+    const form = document.querySelector("form");
+    const popup = document.getElementById("popup");
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent page refresh
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent page refresh
 
-    // Show popup
-    popup.style.display = "block";
+      popup.style.display = "block"; // Show popup
 
-    // Hide after 3 seconds
-    setTimeout(() => {
-      popup.style.display = "none";
-    }, 3000);
+      setTimeout(() => {
+        popup.style.display = "none"; // Hide after 3 sec
+      }, 3000);
 
-    // Reset form
-    form.reset();
-  });
-</script>
-
-  
-
+      form.reset(); // Reset form fields
+    });
+  </script>
 </body>
 </html>
