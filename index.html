@@ -15,10 +15,13 @@
       text-align: center;
     }
     .small-logo {
-  width: 80px;
-  height: auto;
-}
-
+     width: 80px;
+      height: auto;
+     }
+     .logo {
+     width: 80px;
+     height: auto;
+     }
     nav {
       margin-top: 10px;
     }
@@ -41,21 +44,21 @@
       margin-top: 15px;
       font-weight: bold;
     }
-    .container {
-      max-width: 600px;
-      margin: 40px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+   .container {
+  max-width: 100%;
+  padding: 10px;
+  margin: auto;
+}
+
       input, select, textarea {
-      width: 90%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #e27c7c;
-      border-radius: 10px;
-    }
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #e27c7c;
+  border-radius: 10px;
+}
+
       .gender-options, .skills-options {
       display: flex;
       gap: 15px;
@@ -75,11 +78,16 @@
     .helpful-links {
       margin-top: 25px;
     }
-    fieldset{
-      border: solid black;
-      width: 500px;
-      margin: 20px auto;
-    }@media (max-width: 600px) {
+    fieldset {
+  border: solid black;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+   
+    @media (max-width: 600px) {
       nav a {
         display: block;
         margin: 5px 0;
@@ -94,7 +102,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="courses.html">Courses</a>
-      <a href="Contact.html">Contact Us</a>
+      <a href="contact.html">Contact Us</a>
     </nav>
   </header>
   <div class="container">
