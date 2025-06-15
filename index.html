@@ -82,6 +82,21 @@
     }
   </style>
 </head>
+<div id="popup" style="
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-weight: bold;
+  z-index: 9999;
+">
+  ✅ Registration Successful!
+</div>  
 <body>
   <header>
 <!--     <img src="C:\Users\revathi\OneDrive\Documents\headingimage.jpg"
@@ -137,7 +152,7 @@
       <input type="file" id="resume" name="resume">
 
       <button type="submit" class="btn-submit">Register</button>
-      <div id="successMsg" style="color: green; font-weight: bold; margin-top: 15px;"></div>
+<!--       <div id="successMsg" style="color: green; font-weight: bold; margin-top: 15px;"></div> -->
 
     </form>
     </fieldset>
@@ -151,13 +166,25 @@
   </div>
   <script>
   const form = document.querySelector("form");
-  const successMsg = document.getElementById("successMsg");
+  const popup = document.getElementById("popup");
 
   form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    successMsg.textContent = "✅ Registration Successful!";
+    event.preventDefault(); // Prevent page refresh
+
+    // Show popup
+    popup.style.display = "block";
+
+    // Hide after 3 seconds
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+
+    // Reset form
     form.reset();
   });
-</script> 
+</script>
+
+  
+
 </body>
 </html>
