@@ -11,9 +11,14 @@
     }
     header {
       background-color: rgb(0, 200, 255);
-      color: white; padding: 15px ;
+      color: white; padding: 5px ;
       text-align: center;
     }
+    .small-logo {
+  width: 80px;
+  height: auto;
+}
+
     nav {
       margin-top: 10px;
     }
@@ -26,7 +31,7 @@
      .profile-img {
       display: inline-block;
       width: 550px;
-      height: 350px;
+      height: 200px;
       object-fit: none;
       cursor: pointer;
     }
@@ -82,25 +87,9 @@
     }
   </style>
 </head>
-<div id="popup" style="
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  font-weight: bold;
-  z-index: 9999;
-">
-  ✅ Registration Successful!
-</div>  
 <body>
   <header>
-<!--     <img src="C:\Users\revathi\OneDrive\Documents\headingimage.jpg"
-     alt="Logo" /> -->
+   <img src="logo.jpg" alt="Logo" style="width: 80px; height: auto;" />
     <h1>Student Registration</h1>
     <nav>
       <a href="index.html">Home</a>
@@ -110,8 +99,7 @@
   </header>
   <div class="container">
     <div >
-<!--       <img src="C:\Users\revat\OneDrive\Documents\headimg.jpg" -->
-<!--        alt="Profile Image" class="profile-img" /></a>   -->
+      <img src="logo2.jpg" style="width: 500px; height: auto;" />
     </div>
     <fieldset>
       <form >
@@ -152,8 +140,6 @@
       <input type="file" id="resume" name="resume">
 
       <button type="submit" class="btn-submit">Register</button>
-<!--       <div id="successMsg" style="color: green; font-weight: bold; margin-top: 15px;"></div> -->
-
     </form>
     </fieldset>
     <!-- Helpful Links Section -->
@@ -164,6 +150,7 @@
       <a href="tel:+911234567890">📞 Call Us</a>
     </div>
   </div>
+
   <script>
   const form = document.querySelector("form");
   const popup = document.getElementById("popup");
